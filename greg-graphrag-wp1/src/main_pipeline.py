@@ -88,6 +88,7 @@ def run_extraction(engine,row,file_path):
     total_entities = 0
     total_relations = 0
     
+    
     smart_chunks = engine.get_parent_chunks(path)
 
     print(f"📊 Extracting administrative metadata...")

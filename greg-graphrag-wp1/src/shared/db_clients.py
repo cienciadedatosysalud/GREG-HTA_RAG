@@ -10,13 +10,13 @@ load_dotenv()
 OLLAMA_HOST = os.getenv("OLLAMA_HOST")
 
 MODEL_NAME = os.getenv("MODEL_EXTRACTOR") 
-TEMPERATURE_EXTRACTOR = os.getenv("TEMPERATURE_EXTRACTOR",0.0)
+TEMPERATURE_EXTRACTOR = float(os.getenv("TEMPERATURE_EXTRACTOR",0.0))
 
-TEMPERATURE_METADATA=os.getenv("TEMPERATURE_METADATA",0.0)
+TEMPERATURE_METADATA=float(os.getenv("TEMPERATURE_METADATA",0.0))
 
-NUM_CTX = os.getenv("NUM_CTX",16384)
+NUM_CTX = int(os.getenv("NUM_CTX",16384))
 
-REPEAT_PENALTY = os.getenv("REPEAT_PENALTY",1.1)
+REPEAT_PENALTY = float(os.getenv("REPEAT_PENALTY",1.1))
 
 EMBEDDING_MODEL = os.getenv("MODEL_EMBEDDING", "nomic-embed-text")
 EMBEDDING_DIM = 768  # Dimensión fija para Nomic
@@ -29,10 +29,10 @@ GRAPH_NAME = os.getenv("GRAPH_NAME", "rwe_knowledge_graph")
 
 
 # INGESTION PARAMETERS.
-MIN_PARENT_SIZE = os.getenv("MIN_PARENT_SIZE",7000)
-MAX_PARENT_SIZE = os.getenv("MAX_PARENT_SIZE",13000)
-CHILD_SIZE = os.getenv("CHILD_SIZE",1000)
-CHILD_OVERLAP = os.getenv("CHILD_OVERLAP",2)
+MIN_PARENT_SIZE = int(os.getenv("MIN_PARENT_SIZE",7000))
+MAX_PARENT_SIZE = int(os.getenv("MAX_PARENT_SIZE",13000))
+CHILD_SIZE = int(os.getenv("CHILD_SIZE",1000))
+CHILD_OVERLAP = int(os.getenv("CHILD_OVERLAP",2))
 
 
 
