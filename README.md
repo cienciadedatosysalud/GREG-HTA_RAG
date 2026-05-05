@@ -1,3 +1,4 @@
+![GREG LOCO](greg-graphrag-wp1/frontend/public/Greg_Logo_Horizontal_RGB_Berry.png)
 # GREG GraphRAG Project
 
 A specialized Knowledge Graph-based RAG (Retrieval-Augmented Generation) system. This project integrates **FalkorDB** (Graph Database), **LanceDB** (Vector Store), and **Ollama** (LLM) to transform static PDF documentation into an intelligent, navigable, and queryable assistant.
