@@ -1,0 +1,6 @@
+.env
+data/raw/*
+data/processed/*
+data/lancedb/*
+data/falkordb/*
+**/__pycache__/

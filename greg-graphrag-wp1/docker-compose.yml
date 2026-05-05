@@ -1,0 +1,49 @@
+services:
+  falkordb:
+    image: falkordb/falkordb:latest
+    container_name: falkordb_greg
+    user: "1000:1000"
+    ports:
+      - "6380:6379"
+      - "3000:3000"
+    volumes:
+      - ./data/falkordb:/data
+    networks:
+      - greg_network
+    restart: unless-stopped
+
+  greg_backend:
+    build: .
+    container_name: greg_rag_backend
+    restart: unless-stopped
+    user: "1000:1000"
+    ports:
+      - "8000:8000"
+    tty: true
+    stdin_open: true
+    command: uvicorn src.api_chat.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    env_file:
+      - .env
+    networks:
+      - greg_network
+
+  greg_frontend:
+    build:
+      context: ./frontend
+      args:
+        - PUBLIC_API_URL=${PUBLIC_API_URL}
+    container_name: greg_astro_frontend
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    depends_on:
+      - greg_backend
+    networks:
+      - greg_network
+
+networks:
+  greg_network:
+    driver: bridge

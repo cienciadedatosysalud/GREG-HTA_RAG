@@ -1,0 +1,29 @@
+name: rag_greg_jgg
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python==3.11
+  - pip
+  - pandas
+  - requests
+  - pytorch
+  - torchvision
+  - cpuonly
+  - pip:
+      - docling
+      - falkordb
+      - lancedb
+      - pyarrow
+      - json-repair
+      - ollama
+      - sentence-transformers
+      - pydantic
+      - networkx
+      - python-dotenv
+      - uvicorn
+      - fastapi
+      - htmldate
+      - httpx
+      - "python-jose[cryptography]"

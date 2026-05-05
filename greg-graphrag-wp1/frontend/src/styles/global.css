@@ -1,0 +1,28 @@
+/* src/styles/global.css */
+@import "tailwindcss";
+
+@source "../../node_modules/flowbite-react";
+
+.typing-cursor::after {
+  content: "▋";
+  display: inline-block;
+  vertical-align: middle;
+  animation: blink 0.8s step-start infinite;
+  margin-left: 2px;
+  color: #6366f1;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+
+.prose-indigo a {
+  color: #4f46e5; /* Índigo */
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed #c7d2fe;
+  transition: all 0.2s;
+}
+
+.prose-indigo a:hover {
+  background-color: #eef2ff;
+  border-bottom: 1px solid #4f46e5;
+}
