@@ -3,6 +3,7 @@ data/raw/*
 data/processed/*
 data/lancedb/*
 data/falkordb/*
+!data/raw/README.md
 !data/processed/README.md
 !data/lancedb/README.md
 !data/falkordb/README.md
