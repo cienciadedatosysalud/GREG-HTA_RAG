@@ -3,4 +3,7 @@ data/raw/*
 data/processed/*
 data/lancedb/*
 data/falkordb/*
+!data/processed/README.md
+!data/lancedb/README.md
+!data/falkordb/README.md
 **/__pycache__/
